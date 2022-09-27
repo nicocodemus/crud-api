@@ -31,7 +31,7 @@ class Categorias extends Controller{
             'nombre'=>$this->request->getVar('nombre')
         ];
 
-        $categoria->insert($datos);
+        //$categoria->insert($datos);
         if($categoria->insert($datos)){
 
             $session=session();

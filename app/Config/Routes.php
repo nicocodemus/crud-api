@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
@@ -79,3 +80,23 @@ $routes->get('borrarCategoria/(:num)','Categorias::borrar/$1');
 $routes->get('editarCategoria/(:num)','Categorias::editar/$1');
 
 $routes->post('actualizarCategoria','Categorias::actualizar');
+
+/*RUTEO DE <USUARIOS></USUARIOS> */
+$routes->get('admin', 'Usuarios::panel');
+
+$routes->get('loginA', 'Usuarios::loginAdmin');
+
+$routes->post('loginLecture', 'Usuarios::lecture');
+
+$routes->get('listarUsuarios','Usuarios::index');
+
+$routes->get('crearUsuario','Usuarios::crear');
+
+$routes->post('guardarUsuario','Usuarios::guardar');
+
+$routes->get('borrarUsuario/(:num)','Usuarios::borrar/$1');
+
+$routes->get('editarUsuario/(:num)','Usuarios::editar/$1');
+
+$routes->post('actualizarUsuario','Usuarios::actualizar');
+

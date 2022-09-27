@@ -42,7 +42,7 @@ class Noticias extends Controller{
             'slug'=>$this->request->getVar('slug')
         ];
 
-        $noticia->insert($datos);
+        //$noticia->insert($datos);
         if($noticia->insert($datos)){
 
             $session=session();

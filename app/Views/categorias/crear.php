@@ -3,7 +3,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">ingresa la nueva categoria</h5>
+            <h5 class="card-title">ingresa el nuevo usuario</h5>
             <p class="card-text">
 
             <form action="<?=base_url('guardarCategoria');?>" method="post">
