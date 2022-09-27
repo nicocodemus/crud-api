@@ -65,3 +65,17 @@ $routes->get('borrar/(:num)','Noticias::borrar/$1');
 $routes->get('editar/(:num)','Noticias::editar/$1');
 
 $routes->post('actualizar','Noticias::actualizar');
+
+/*RUTEO DE <CATEGOIRAS></CATEGOIRAS*/
+
+$routes->get('listarCategorias','Categorias::index');
+
+$routes->get('crearCategoria','Categorias::crear');
+
+$routes->post('guardarCategoria','Categorias::guardar');
+
+$routes->get('borrarCategoria/(:num)','Categorias::borrar/$1');
+
+$routes->get('editarCategoria/(:num)','Categorias::editar/$1');
+
+$routes->post('actualizarCategoria','Categorias::actualizar');

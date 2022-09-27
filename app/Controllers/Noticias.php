@@ -80,7 +80,7 @@ class Noticias extends Controller{
 
     public function editar($id=null){
 
-        print_r($id);
+       /*print_r($id);*/
 
         $noticia=new Noticia();
         $datos['noticia']=$noticia->where('id',$id)->first();
