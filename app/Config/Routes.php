@@ -84,7 +84,7 @@ $routes->post('actualizarCategoria','Categorias::actualizar');
 /*RUTEO DE <USUARIOS></USUARIOS> */
 $routes->get('admin', 'Usuarios::panel');
 
-$routes->get('loginA', 'Usuarios::loginAdmin');
+$routes->get('loginA', 'Usuarios::login');
 
 $routes->post('loginLecture', 'Usuarios::lecture');
 
@@ -99,4 +99,6 @@ $routes->get('borrarUsuario/(:num)','Usuarios::borrar/$1');
 $routes->get('editarUsuario/(:num)','Usuarios::editar/$1');
 
 $routes->post('actualizarUsuario','Usuarios::actualizar');
+
+$routes->get('salir','Usuarios::salir');
 

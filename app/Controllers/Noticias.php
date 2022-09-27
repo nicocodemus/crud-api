@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\noticia;
+use App\Models\categoria;
 class Noticias extends Controller{
 
     public function index(){
@@ -16,6 +17,10 @@ class Noticias extends Controller{
     }
 
     public function crear(){
+        //pasar categorias
+        $categoria=new Categoria();
+        $datos['categorias']=$categoria->orderBy('id','ASC')->findAll();
+
 
         $datos['cabecera']=view('template/cabecera');
         $datos['piePagina']=view('template/piePagina');
@@ -82,6 +87,9 @@ class Noticias extends Controller{
 
        /*print_r($id);*/
 
+       $categoria=new Categoria();
+        $datos['categorias']=$categoria->orderBy('id','ASC')->findAll();
+
         $noticia=new Noticia();
         $datos['noticia']=$noticia->where('id',$id)->first();
 
@@ -90,8 +98,9 @@ class Noticias extends Controller{
         $datos['piePagina']=view('template/piePagina');
 
 
-
+        
         return view('noticias/editar',$datos);
+        
     }
 
     public function actualizar(){

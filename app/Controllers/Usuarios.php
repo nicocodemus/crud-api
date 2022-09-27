@@ -34,10 +34,11 @@ class Usuarios extends Controller{
         $datos=[
             'nombre'=>$this->request->getVar('nombre'),
             'clave'=>password_hash($this->request->getVar('clave'),PASSWORD_DEFAULT),
+            'rol'=>$this->request->getVar('rol')
            // 'clave'=>$this->request->password_hash((getVar('clave')))
         ];
 
-       // $usuario->insert($datos);
+        //$usuario->insert($datos);
        if($usuario->insert($datos)){
 
             $session=session();
@@ -94,7 +95,8 @@ class Usuarios extends Controller{
 
         $datos=[
             'nombre'=>$this->request->getVar('nombre'),
-            'clave'=>password_hash($this->request->getVar('clave'),PASSWORD_DEFAULT)
+            'clave'=>password_hash($this->request->getVar('clave'),PASSWORD_DEFAULT),
+            'rol'=>$this->request->getVar('rol')
         ];
         $id=$this->request->getVar('id');
 
@@ -125,7 +127,7 @@ class Usuarios extends Controller{
 
     }
     /*REDIRECCION FORMULARIO LOGEO ADMIN*/
-    public function loginAdmin(){
+    public function login(){
         $datos['cabecera']=view('template/cabecera');
         $datos['piePagina']=view('template/piePagina');
 
@@ -148,8 +150,8 @@ class Usuarios extends Controller{
         if(count($datosUsuario)>0 && password_verify($password,$datosUsuario[0]['clave'])){//falta encriptacion de contraseña
 
             $data=[
-                'nombre'=>$datosUsuario[0]['nombre']
-                /*'rol'=>$datos['usuario']['rol]*/
+                'nombre'=>$datosUsuario[0]['nombre'],
+                'rol'=>$datosUsuario[0]['rol']
             ];
 
             $session=session();
@@ -162,6 +164,12 @@ class Usuarios extends Controller{
         }else{
             return redirect()->to(base_url('loginA'))->with('mensaje','0');
         }
+    }
+
+    public function salir(){
+        $session=session();
+        $session->destroy();
+        return redirect()->to(base_url('loginA'));
     }
 
 }

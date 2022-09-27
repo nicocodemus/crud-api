@@ -7,7 +7,7 @@ class Usuario extends Model{
     protected $table = 'usuarios';
     // Uncomment below if you want add primary key
      protected $primaryKey = 'id';
-     protected $allowedFields=['nombre','clave'];
+     protected $allowedFields=['nombre','clave','rol'];
 
      public function obtenerUsuario($data){
         $usuario=$this->db->table('usuarios');
