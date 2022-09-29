@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prueba Kodeo</title>
+    <title>Prueba Kodeo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4f796de792.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80">
 
     <style>
       *{
@@ -13,12 +14,12 @@
         box-sizing: border-box;
       }
       #mainContainer{
-        min-height: 90vh;
+        min-height: 83vh;
       }
     </style>
 </head>
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark text-white ">
   <a class="navbar-brand" href="<?=base_url('tiempo') ?>"><i class="nav-link fa-solid fa-sun fa-spin"style="--fa-animation-duration: 10s;"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

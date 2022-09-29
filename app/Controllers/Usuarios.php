@@ -171,10 +171,10 @@ class Usuarios extends Controller{
 
            // var_dump($datosUsuario[0]['clave']) ;
 
-            return redirect()->to(base_url('admin'))->with('mensaje','1');
+            return redirect()->to(base_url('admin'))->with('mensaje','BIENVENIDO ');
 
         }else{
-            return redirect()->to(base_url('loginA'))->with('mensaje','0');
+            return redirect()->to(base_url('loginA'))->with('mensaje','vuelve a intentarlo');
         }
     }
 
