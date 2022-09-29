@@ -1,5 +1,5 @@
 <?=$cabecera?>
-    formulario crear categoria 
+   
 
     <div class="card">
         <div class="card-body">

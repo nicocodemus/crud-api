@@ -1,5 +1,5 @@
 <?=$cabecera?>
-    editar usuario
+ 
 
     <?php if(session('rol')=='admin'):?>
 
@@ -36,7 +36,7 @@
 
                             <div class="form-group">
                                 <label for="rol">cambiar rol</label>
-                                <select name="rol" id="rol">
+                                <select name="rol" id="rol"class="form-control">
                                     <option value="user" >usuario</option>
                                     <option value="admin" >administrador</option>
                                 </select>

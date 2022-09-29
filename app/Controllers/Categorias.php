@@ -11,7 +11,7 @@ class Categorias extends Controller{
         $categoria=new Categoria();
         $datos['categorias']=$categoria->orderBy('id','ASC')->findAll();
 
-        $datos['cabecera']=view('template/cabecera');
+        $datos['cabecera']=view('template/cabecera',$datos);
         $datos['piePagina']=view('template/piePagina');
         return view('categorias/listar',$datos);
     }
@@ -99,7 +99,7 @@ class Categorias extends Controller{
             $session->setFlashdata('mensaje','actualizacion fallida');
         }
 
-        echo "actualizacion realizada";
+        
 
         return $this->response->redirect(site_url('listarCategorias'));
     }

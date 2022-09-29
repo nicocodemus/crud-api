@@ -1,5 +1,5 @@
 <?=$cabecera?>
-    formulario editar
+    
 
     <?php /*print_r($noticia); */if(session('rol')=='admin'):?>
 
@@ -24,14 +24,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date">contenido</label>
-                            <input id="date" class="form-control" type="text" name="texto" value="<?=$noticia['texto'] ?>">
+                            <label for="texto">contenido</label>
+                            <textarea name="texto" id="contenido" cols="30" rows="10" class="form-control"><?=$noticia['texto'] ?>"</textarea>
+                            
                         </div>
                         
 
                         <div class="form-group">
                         <label for="categoria"> categoria</label>
-                        <select name="categoria_id" id="">
+                        <select name="categoria_id" id=""class="form-control">
                             <?php for ($i=0;$i < count($categorias);$i++):?>
 
                                 <option value="<?=$categorias[$i]['id'] ?>"> <?=$categorias[$i]['nombre']?></option>

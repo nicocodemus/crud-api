@@ -1,5 +1,5 @@
 <?=$cabecera?>
-    formulario crear Usuario 
+  
 
     <div class="card">
         <div class="card-body">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="rol">elegir rol</label>
-                        <select name="rol" id="rol">
+                        <select name="rol" id="rol"class="form-control" >
                             <option value="user" >usuario</option>
                           <?php if(session('rol')=='admin'):?> <option value="admin" >administrador</option><?php endif;?>
                         </select>

@@ -3,6 +3,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\usuario;
+use App\Models\noticia;
+use App\Models\categoria;
 use CodeIgniter\Router\Exceptions\RedirectException;
 
 class Usuarios extends Controller{
@@ -118,6 +120,16 @@ class Usuarios extends Controller{
     }
 
     public function panel(){
+
+        $usuario=new Usuario();
+
+        $datos['usuarios']=$usuario->orderBy('id','ASC')->findAll();
+
+        $categoria=new Categoria();
+        $datos['categorias']=$categoria->orderBy('id','ASC')->findAll();
+
+        $noticia=new Noticia();
+        $datos['noticias']=$noticia->orderBy('id','ASC')->findAll();
 
         $datos['cabecera']=view('template/cabecera');
         $datos['piePagina']=view('template/piePagina');

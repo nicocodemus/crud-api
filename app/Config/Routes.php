@@ -37,6 +37,11 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('tiempo','Home::api');
+$routes->get('noticias','Home::index');
+$routes->get('noticia/categoria','Home::showCategorias');
+$routes->get('noticia/categoria/(:any)','Home::detalleCategoria/$1');
+$routes->get('noticia/(:any)','Home::detalleNoticia/$1');
+
 
 
 /*

@@ -1,8 +1,8 @@
 <?=$cabecera?>
-logeo de admin
+
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">ingresa</h5>
+            <h5 class="card-title h3">ingresa</h5>
             <p class="card-text">
 
             <form action="<?=base_url('loginLecture');?>" method="post">

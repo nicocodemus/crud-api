@@ -1,44 +1,34 @@
 <?=$cabecera ?>
-    lista de libros
- <!-- <?php /*print_r($noticias)*/?> -->
 
- 
 
- 
-   
-    <a href="<?=base_url('crear')?>" class="btn btn-success">crear noticia</a>
-       <table class="table table-dark">
-        <thead class="thead-light">
-            <tr>
-                <th>#</th>
-                <th>fecha</th>
-                <th>titular</th>
-                <th>contenido</th>
-                <th>categoria</th>
-                <th>slug</th>
-                <th>acciones</th>
-            </tr>
-        </thead>
-        <tbody>
+ <h3 class="display-1 font-italic text-white text-center">noticias</h3>
+    <a href="<?=base_url('crear')?>" class="btn btn-success btn-block mt-3 mb-3"> <span class="font-weight-bold"><i class="fa-solid fa-file-circle-plus"></i> crear noticia</span></a>
 
-        <?php foreach($noticias as $noticia):?>
+    <div class="d-flex flex-wrap justify-content-center">
 
-            <tr>
-                <td><?=$noticia['id']; ?></td>
-                <td><?=$noticia['fecha_noticia']; ?></td>
-                <td><?=$noticia['titular']; ?></td>
-                <td><?=$noticia['texto']; ?></td>
-                <td><?=$noticia['categoria_id']; ?></td>
-                <td><?=$noticia['slug'];?></td>
-                <td>
-                    <a href="<?=base_url('editar/'.$noticia['id']);?>" class="btn btn-info" type="button">editar</a>
-                    <a href="<?=base_url('borrar/'.$noticia['id']);?>" class="btn btn-danger" type="button">borrar</a>
-                </td>
-            </tr>
 
-        <?php endforeach; ?>
-        </tbody>
-       </table>
+            <?php foreach($noticias as $noticia):?>
+
+                <div class="card m-3 bg-dark" style="width:250px">
+                    <div class="card-body">
+                        <h4 class="card-title text-white"><?=$noticia['titular']; ?></h4>
+                        <p class="card-text text-white">noticia id: <?=$noticia['id']; ?></p>
+                        <p class="card-text text-white">categoria id: <?=$noticia['categoria_id']; ?></p>
+                        <p class="text-white"><i class="fa-solid fa-calendar-days"></i>    <?=$noticia['fecha_noticia']; ?></p>
+                        <a href="#id<?=$noticia['id']; ?>" class="btn btn-info mb-3 mr-5" data-toggle="collapse">contenido <i class="fa-solid fa-caret-down ml-3"></i></a>
+                        <div id="id<?=$noticia['id']; ?>" class="collapse text-white mb-3" style="max-height:300px;overflow-y:scroll">
+                        <?=$noticia['texto']; ?>
+                        
+                        </div>
+                        <a href="<?=base_url('editar/'.$noticia['id']);?>" class="btn btn-success"><i class="fa-solid fa-file-pen"></i>  editar</a> 
+                        <a href="<?=base_url('borrar/'.$noticia['id']);?>" class="btn btn-danger"><i class="fa-solid fa-file-circle-minus"></i>  borrar</a> 
+                    </div>
+                    
+                </div>
+
+            <?php endforeach; ?>
+    </div>   
+    
     
 
     

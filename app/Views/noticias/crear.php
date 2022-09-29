@@ -1,6 +1,9 @@
 <?=$cabecera?>
+
     formulario crear 
     <?php //print_r(count($categorias)); ?>
+
+  
 
     <div class="card">
         <div class="card-body">
@@ -22,8 +25,10 @@
 
                     <div class="form-group">
                         <label for="date">contenido</label>
-                        <input id="date" class="form-control" type="text" name="texto">
+                        <textarea name="texto" id="contenido" cols="30" rows="10" class="form-control"></textarea>
+                        <!-- <input id="date" class="form-control" type="text" name="texto"> -->
                     </div>
+                    
 
                     <!-- <div class="form-group">
                         <label for="date">categoria</label>
@@ -32,7 +37,7 @@
 
                     <div class="form-group">
                         <label for="categoria">elegir categoria</label>
-                        <select name="categoria_id" id="categoria">
+                        <select name="categoria_id" id="categoria" class="form-control">
                             <?php for ($i=0;$i < count($categorias);$i++):?>
 
                                 <option value="<?=$categorias[$i]['id'] ?>"> <?=$categorias[$i]['nombre']?></option>
@@ -58,5 +63,5 @@
         </div>
     </div>
 
-    
+   
 <?=$piePagina ?>
